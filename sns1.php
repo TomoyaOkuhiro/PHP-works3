@@ -17,6 +17,14 @@
     <input type="submit" value="送信する">
   </form>
 
+  <?php
+  $db = new PDO("mysql:host=localhost;dbname=db", "root", "root");
+  $ps = $db->query("SELECT * FROM tb ORDER BY num DESC");
+  while ($r = $ps->fetch()) {;
+
+    echo "{$r['num']} {$r['name']} {$r['mes']} {$r['date']}<hr>";
+  }
+  ?>
 </body>
 
 </html>
